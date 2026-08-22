@@ -7,18 +7,14 @@ public:
         int release = 0;
         
         
-        for(int current = 0; current < nums.size(); current++)
-        {
-            product *= nums[current];
+        for(int c = 0; c < nums.size(); c++){
+            product *= nums[c];
             
-           
-            while(release <= current && product >= k)
-            {
+            while(release <= c && product >= k){
                 product = product/nums[release];
                 release++;
             }
-            
-            ans += (current-release+1);
+            ans += (c-release+1);
         }
         return ans;
     }
