@@ -18,13 +18,15 @@ public:
 
                 while(p<q){
 
-                    long long sum = (long long)nums[i]+ nums[j]+ nums[p]+ nums[q];
-                    if(sum<target){
+                    long long t = (long long)target - nums[i];
+                    long long rem = t - nums[j];
+
+                    long long sum = (long long)nums[p] + nums[q];
+
+                    if(sum < rem)
                         p++;
-                    }
-                    else if(sum>target){
+                    else if(sum > rem)
                         q--;
-                    }
                     else{
                         ans.push_back({nums[i],nums[j], nums[p],nums[q]});
                         p++;
